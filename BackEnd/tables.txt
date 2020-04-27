@@ -1,0 +1,13 @@
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL,
+  `s_user` int(1)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `user` (`user_id`, `name`, `email`, `password`,`s_user`) VALUES
+(1, 'Mikael Ylivaara', 'mikaely@metropolia.fi', '1234','1'),
+(2, 'Roni Hänninen', 'ronihan@metropolia.fi', 'qwer','1'),
+(3, 'Jan Lindholm', 'janlind@metropolia.fi','asdf','1'),
+(3, 'Tarza Kingofapes','tarzank@metropolia.fi','zxcv','0');
