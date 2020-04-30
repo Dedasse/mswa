@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metropolia ICT-Courses</title>
+
+    <style>
+
+        table, tr, td {
+            border: 1px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script src="courses.js"></script>
+
+    <button id="foo">Get data</button>
+
+    <script>
+
+        // var children = [{num: 6, name: 'me', phone: 7}, {num: 8, name: 'him', phone: 9} , {num: 8, name: 'him', phone: 9}];
+        // var children = [{num2: 6, name2: 'me', phone2: 7}, {num2: 8, name: 'him', phone: 9} , {num3: 8, name: 'him', phone: 9}];
+
+        function addHeaders(table, keys) {
+            var row = table.insertRow();
+            for( var i = 0; i < keys.length; i++ ) {
+                var cell = row.insertCell();
+                cell.appendChild(document.createTextNode(keys[i]));
+            }
+        }
+
+        var checkbox = document.createElement('input'); // TODO
+
+        var table = document.createElement('table');
+        for( var i = 0; i < children.length; i++ ) {
+
+            var child = children[i];
+            if(i === 0 ) {
+                addHeaders(table, Object.keys(child));
+            }
+            var row = table.insertRow();
+            Object.keys(child).forEach(function(k) {
+                console.log(k);
+                var cell = row.insertCell();
+
+
+                checkbox.type = "checkbox";
+                checkbox.name = "name";
+                checkbox.value = "value";
+                checkbox.id = i;
+                console.log(checkbox.id);
+                cell.appendChild(checkbox);
+
+                if (checkbox.id == 2) {
+                    var x = document.createTextNode("foo:" + i);
+                    cell.appendChild(x);
+                }
+
+                cell.appendChild(document.createTextNode(child[k]));
+            })
+        }
+
+        document.getElementById('container').appendChild(table);
+
+        // click.js
+        const btn = document.getElementById('foo');
+
+        btn.addEventListener('click', (event) => {
+
+            console.log('clicked');
+            // document.createElement()
+            var x = document.getElementById("0");
+
+            alert(x.innerText);
+            // x.innerText = "EASfalksdjfadsjf";
+            x.innerHTML = "fasdfasfdas";
+            alert(x);
+            alert(x);
+            cell.appendChild(document.createTextNode(child[k]));
+
+        });
+    </script>
+
+</body>
+</html>
