@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Metropolia ICT-Courses</title>
 
     <style>
 
@@ -19,6 +19,8 @@
 
     <script src="courses.js"></script>
 
+    <button id="foo">Get data</button>
+
     <script>
 
         // var children = [{num: 6, name: 'me', phone: 7}, {num: 8, name: 'him', phone: 9} , {num: 8, name: 'him', phone: 9}];
@@ -32,6 +34,8 @@
             }
         }
 
+        var checkbox = document.createElement('input'); // TODO
+
         var table = document.createElement('table');
         for( var i = 0; i < children.length; i++ ) {
 
@@ -43,12 +47,43 @@
             Object.keys(child).forEach(function(k) {
                 console.log(k);
                 var cell = row.insertCell();
+
+
+                checkbox.type = "checkbox";
+                checkbox.name = "name";
+                checkbox.value = "value";
+                checkbox.id = i;
+                console.log(checkbox.id);
+                cell.appendChild(checkbox);
+
+                if (checkbox.id == 2) {
+                    var x = document.createTextNode("foo:" + i);
+                    cell.appendChild(x);
+                }
+
                 cell.appendChild(document.createTextNode(child[k]));
             })
         }
 
         document.getElementById('container').appendChild(table);
 
+        // click.js
+        const btn = document.getElementById('foo');
+
+        btn.addEventListener('click', (event) => {
+
+            console.log('clicked');
+            // document.createElement()
+            var x = document.getElementById("0");
+
+            alert(x.innerText);
+            // x.innerText = "EASfalksdjfadsjf";
+            x.innerHTML = "fasdfasfdas";
+            alert(x);
+            alert(x);
+            cell.appendChild(document.createTextNode(child[k]));
+
+        });
     </script>
 
 </body>
