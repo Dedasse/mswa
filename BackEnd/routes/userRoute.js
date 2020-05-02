@@ -16,9 +16,7 @@ router.post('/hack', (req, res) => {
 });
 
 
-router.put('/:id',[passport.authenticate('jwt', {session: false}),admin], userController.user_put);
-
-router.update
+router.put('/',[passport.authenticate('jwt', {session: false}),admin], userController.user_put);
 
 router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], userController.user_delete);
 

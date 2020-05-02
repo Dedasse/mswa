@@ -42,7 +42,7 @@ const insertUser = async (user) => {
 
 const updateUser = async (user) => {
   try {
-    console.log('insert user?', user);
+    console.log('inert user?', user);
     const [rows] = await promisePool.query('UPDATE users SET name = ?, email = ?, password = ?, isAdmin = ? WHERE users.user_id = ?', [ user.name, user.email, user.passwd, user.isAdmin, user.id ]);
     return rows;
   } catch (e) {

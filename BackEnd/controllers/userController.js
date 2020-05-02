@@ -42,7 +42,7 @@ const user_put = async (req, res) => {
 };
 
 const user_delete = async (req, res) => {
-  console.log('user_put', req.parms);
+  console.log('user_delete', req.parms);
   const delUser = await userModel.deleteUser(req.params.id);
   console.log('user_delete result from db', delUser);
   res.json({ deleted: 'OK' });
