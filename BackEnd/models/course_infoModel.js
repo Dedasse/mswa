@@ -4,7 +4,7 @@ const promisePool = require('../database/db').promise();
 
 const getAllcourse_infos = async () => {
   try {
-    const [rows] = await promisePool.query('SELECT      course_info_id,course_infos.name  FROM course_infos ');
+    const [rows] = await promisePool.query('SELECT      info_id,course_info.name, information  FROM course_info ');
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -15,7 +15,7 @@ const getAllcourse_infos = async () => {
 
 const getcourse_info = async (id) => {
   try {
-    const [rows] = await promisePool.query('SELECT course_infos.name FROM course_infos  WHERE  course_info_id = ? ' , [ id ]);
+    const [rows] = await promisePool.query('SELECT course_info.information FROM course_info  WHERE  info_id = ? ' , [ id ]);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -26,7 +26,7 @@ const insertcourse_info = async (user) => {
   try {
     console.log('insert course_info?', user);
     
-    const [rows] = await promisePool.query('INSERT INTO course_infos (course_info_id, name) VALUES (?, ?)',user);
+    const [rows] = await promisePool.query('INSERT INTO course_info (course_info_id, name) VALUES (?, ?)',user);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -36,7 +36,7 @@ const insertcourse_info = async (user) => {
 const updatecourse_info = async (user) => {
   try {
     console.log('insert course_info?', user);
-    const [rows] = await promisePool.query('UPDATE course_infos SET name = ? WHERE course_infos.course_info_id = ?', [ user.name, user.course_info_id ]);
+    const [rows] = await promisePool.query('UPDATE course_info SET name = ? WHERE course_info.info_id = ?', [ user.name, user.course_info_id ]);
     
     return rows;
   } catch (e) {
@@ -47,7 +47,7 @@ const updatecourse_info = async (user) => {
 const deletecourse_info = async (id) => {
   try {
     console.log('delete course_info    ', id);
-    const [rows] = await promisePool.query('DELETE FROM course_infos WHERE course_infos.course_info_id = ?', [ id ]);
+    const [rows] = await promisePool.query('DELETE FROM course_info WHERE course_info.info_id = ?', [ id ]);
     console.log('deleted?', rows);
     return rows;
   } catch (e) {
