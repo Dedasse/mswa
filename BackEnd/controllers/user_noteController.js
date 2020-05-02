@@ -1,5 +1,5 @@
 'use strict';
-const courseModel = require('../models/user_noteModel');
+const usernoteModel = require('../models/user_noteModel');
 
 const {validationResult} = require('express-validator');
 
@@ -7,14 +7,14 @@ const {validationResult} = require('express-validator');
 //const user_note = user_noteModel.cat;
 
 const user_note_list_get = async (req, res) => {
-  const user_notes = await user_noteModel.getAlluser_notes();
-  res.json(user_notes);
+  const usernotes = await usernoteModel.getAlluser_notes();
+  res.json(usernotes);
 };
 
 const user_note_get = async (req, res) => {
   console.log('user_note id parameter', req.params);
-  const user_note = await user_noteModel.getuser_note(req.params.id);
-  res.json(user_note);
+  const usernote = await usernoteModel.getuser_note(req.params.id);
+  res.json(usernote);
 };
 
 
@@ -27,10 +27,11 @@ const user_note_post = async (req, res) => {
 
   try {
     const params = [
-      req.body.user_note_id,
-      req.body.name
+      req.body.who_id,
+      req.body.where_id,
+      req.body.message
     ];
-    const user = await user_noteModel.insertuser_note(params);
+    const user = await usernoteModel.insertuser_note(params);
     console.log('inserted!!!', user);
     res.send(`added user: ${user.user_note_id}`);
   } catch (e) {
@@ -42,14 +43,14 @@ const user_note_post = async (req, res) => {
 
 const  user_note_put = async (req, res) => {
   console.log('user_note_put',req.body);
-  const upuser_note = await user_noteModel.updateuser_note(req.body);
+  const upuser_note = await usernoteModel.updateuser_note(req.body);
   console.log('user_note_put result from db', upuser_note);
   res.status(204).send();
 };
 
 const user_note_delete = async (req, res) => {
   console.log('user_note_delete', req.parms);
-  const deluser_note = await user_noteModel.deleteuser_note(req.params.id);
+  const delUser = await usernoteModel.deleteuser_note(req.params.id);
   console.log('user_delete result from db', delUser);
   res.json({ deleted: 'OK' });
 };

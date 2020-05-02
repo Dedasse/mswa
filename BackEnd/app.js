@@ -11,7 +11,7 @@ const periodRoute = require('./routes/periodRoute');
 const courseRoute = require('./routes/courseRoute');
 const userRoute = require('./routes/userRoute');
 const teacherRoute = require('./routes/teacherRoute');
-const course_infoRoute = require('./routes/course_infoRoute');
+const courseinfoRoute = require('./routes/courseinfoRoute');
 const user_noteRoute = require('./routes/user_noteRoute');
 
 
@@ -23,7 +23,7 @@ app.use(express.static('uploads'));
 app.use('/thumbnails', express.static('thumbnails'));
 
 app.use('/teacher', passport.authenticate('jwt',{session: false}), teacherRoute);
-app.use('/course_info', passport.authenticate('jwt',{session: false}), course_infoRoute);
+app.use('/course_info', passport.authenticate('jwt',{session: false}), courseinfoRoute);
 app.use('/user_note', passport.authenticate('jwt',{session: false}), user_noteRoute);
 app.use('/auth', authRoute);
 app.use('/period', periodRoute);

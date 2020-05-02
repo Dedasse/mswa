@@ -145,12 +145,26 @@ kirjallinen raportti. Raporttia kirjoittaessa tarkoitus on perehtyä tiettyjen s
 puitteissa kirjoittamiseen.');
 
 CREATE TABLE `user_notes` (
+  `note_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `who_id` int(11) NOT NULL ,
-  `course` int(11) REFERENCES courses(course_id),
-  `teacher` int(11) REFERENCES teachers(teacher_id),
-  `info` int(11) REFERENCES course_info(info_id),
+  `where_id` int(11) NOT NULL,
   `message` text NOT NULL
-  FOREIGN KEY (`who_id`)REFERENCES users(user_id)
 );
 
+INSERT INTO `teachers` (`teacher_id`,`name`,`picture`) VALUES
+(1, 'Antti Koivumäki', 'antti_koivumaki.png'),
+(2, 'Birgitta Nenonen-Andersson', 'birgitta_nenonen-andersson.png'),
+(3, 'Hannu Markkanen', 'hannu_markkanen.png'),
+(4, 'Heini Puuska', 'heini_puuska.png'),
+(5, 'Ilkka Kylmäniemi', 'ilkka_kylmaniemi.png'),
+(6, 'Jarkko Vuori', 'jarkko_vuori.png'),
+(7, 'Jorma Räty', 'jorma_raty.png'),
+(8, 'Joseph Hotchkiss', 'joseph_hotchkiss.png'),
+(9, 'Jussi Alhorinne', 'jussi_alhorinne.png'),
+(10, 'Marko Uusitalo', 'marko_uusitalo.png'),
+(11, 'Saana Vallius', 'saana_vallius.png'),
+(12, 'Sakari Lukkarinen', 'sakari_lukkarinen.png'),
+(13, 'Timo Salin', 'timo_salin.png'),
+(14, 'Toni Spännäri', 'toni_spannari.png'),
+(15, 'Ulla Paatola', 'ulla_paatola.png');
 
