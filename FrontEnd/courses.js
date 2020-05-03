@@ -2,7 +2,7 @@ var children =
     [
         {
             "opinto_id": 1,
-            "periods.name": "Älykkäät IoT-laitteet",
+            "period_name": "Älykkäät IoT-laitteet",
             "course_name": "Smart",
             "teacher_name": "Joseph Hotchkiss",
             "course_info": "Kurssin aikana opiskellaan C-ohjelmointia aloittelijatasolla. Kurssin lopputyönä ohjelmoidaan monenlaisia\n" +
