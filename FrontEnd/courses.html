@@ -5,10 +5,13 @@
     <title>Metropolia ICT-Courses</title>
 
     <style>
-                body {
+
+        body {
             color: #bb86fc;
             background-color: #121212;
             font-size: 2rem;
+
+            /* overflow: scroll; */
         }
 
         tr /* , td */ {
@@ -31,7 +34,8 @@
             color: white;
             font-size: 1.5rem;
             padding: 10px;
-        }    
+        }
+
     </style>
 
 </head>
@@ -39,11 +43,9 @@
 
     <div id="container"></div>
 
-    <script src="courses.js"></script>
+    <script src="courses.js"></script> <!-- var children -->
 
     <button id="foo">Get data</button>
-
-    <form method="get" action="./courses_light.html"><button type="submit">Light mode</button></form>
 
     <script>
 
@@ -72,7 +74,11 @@
                 console.log(k);
                 var cell = row.insertCell();
 
+                let x = document.createTextNode("foo: " + i);
+                cell.appendChild(x);
+                cel.innerHTML =
 
+                /*
                 checkbox.type = "checkbox";
                 checkbox.name = "name";
                 checkbox.value = "value";
@@ -80,11 +86,11 @@
                 console.log(checkbox.id);
                 cell.appendChild(checkbox);
 
-                if (checkbox.id == 2) {
-                    var x = document.createTextNode("foo:" + i);
+                if (checkbox.id == 0) {
+                    let x = document.createTextNode("foo:" + i);
                     cell.appendChild(x);
                 }
-
+                */
                 cell.appendChild(document.createTextNode(child[k]));
             })
         }
@@ -98,7 +104,7 @@
 
             console.log('clicked');
             // document.createElement()
-            var x = document.getElementById("0");
+            let x = document.getElementById("0");
 
             alert(x.innerText);
             // x.innerText = "EASfalksdjfadsjf";
