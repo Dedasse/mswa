@@ -168,3 +168,4 @@ INSERT INTO `teachers` (`teacher_id`,`name`,`picture`) VALUES
 (14, 'Toni Spännäri', 'toni_spannari.png'),
 (15, 'Ulla Paatola', 'ulla_paatola.png');
 
+[passport.authenticate('jwt', {session: false}),admin]
