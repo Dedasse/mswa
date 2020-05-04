@@ -34,12 +34,48 @@
             padding: 10px;
         }
 
+        * {
+            box-sizing: border-box;
+            color: lightgray;
+            background-color: #121212;
+        }
+        .wrapper {
+            /* order: 1px solid red; */
+        }
+        .inner {
+            border: 1px solid purple;
+            /*max-width: 300px; */
+            margin: auto;
+        }
+        input[type=checkbox] {
+            display: none;
+        }
+        input[type=checkbox] ~ label {
+            background: purple;
+            height: 50px;
+            color: #fff;
+            padding: 16px;
+            display: block;
+        }
+        input[type=checkbox]:checked ~ label ~ .content {
+            opacity: 0;
+            height: 0;
+            display: none;
+        }
+        .content {
+            background: #121212;
+            /* height: 200px; */
+            padding: 16px;
+            display: block;
+            clear: both;
+        }
+
     </style>
 
 </head>
 <body>
 
-    <h1>Course - Course</h1>
+    <h1>My Metropolia Courses</h1>
 
     <div id="container"></div>
 
@@ -71,45 +107,33 @@
 
             var child = children[i];
 
-            document.write('<hr>');
-            document.write('<h1>' + child.course_name +  '</h1>');
-            document.write('<p>' + child.Period_name + '</p>');
-            document.write('<p>' + child.opinto_id + '</p>');
+        let s = `
+        <section>
+            <div class="wrapper">
+                <div class="inner">
+                <input type="checkbox" id="toggle${i}">
+                <label for="toggle${i}">Click me for - ${child.course_name}</label>
+            <div class="content">
+                <h1>${child.course_name}</h1>
+                <p><img src="" width="200" height="200">${child.teacher_name}</p>
 
-            if(i === 0 ) {
-                // addHeaders(table, Object.keys(child));
-            }
+            <p>${child.course_info}... Some information to be hidden along with this div.</p>
+            </div>
+        </section>
+            `;
+
+            document.write(s);
+
             // var row = table.insertRow();
             Object.keys(child).forEach(function(k) {
                 console.log(k);
                 console.log(child);
 
                 let x = document.createElement('h1');
-                // h1.type = 1
                 x.value="Foo";
 
                 x.appendChild(document.createTextNode(child[k]));
 
-                //var cell = row.insertCell();
-
-                // let x = document.createTextNode("foo: " + i);
-                // cell.appendChild(x);
-                // cel.innerHTML =
-
-                /*
-                checkbox.type = "checkbox";
-                checkbox.name = "name";
-                checkbox.value = "value";
-                checkbox.id = i;
-                console.log(checkbox.id);
-                cell.appendChild(checkbox);
-
-                if (checkbox.id == 0) {
-                    let x = document.createTextNode("foo:" + i);
-                    cell.appendChild(x);
-                }
-                */
-                // cell.appendChild(document.createTextNode(child[k]));
             })
         }
 
@@ -122,10 +146,9 @@
 
             console.log('clicked');
 
-            let x = document.getElementById("0");
-
-            x.innerHTML = "fasdfasfdas";
-            cell.appendChild(document.createTextNode(child[k]));
+            // let x = document.getElementById("0");
+            // x.innerHTML = "fasdfasfdas";
+            // cell.appendChild(document.createTextNode(child[k]));
 
         });
     </script>
