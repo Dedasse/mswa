@@ -4,7 +4,7 @@ const promisePool = require('../database/db').promise();
 
 const getAllcourses = async () => {
   try {
-    const [rows] = await promisePool.query('SELECT      course_id,courses.name  FROM courses ');
+    const [rows] = await promisePool.query('SELECT *  FROM courses ');
     return rows;
   } catch (e) {
     console.error('error', e.message);
