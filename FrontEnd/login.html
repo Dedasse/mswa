@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jans Login</title>
+    <link href="./styles_new.css" rel="stylesheet" type="text/css" title="default">
+    <link href="./styles_new_light.css" rel="alternate stylesheet" type="text/css" title="alternate">
+    <script type="text/javascript" src="./styleSwitcher.js"></script>
+</head>
+
+<style>
+    * {
+        box-sizing:border-box;
+    }
+
+    #login-form {
+         float: left;
+         margin-left: 5%;
+         margin-right: 8%;
+         width:40%; /* The width is 20%, by default */
+     }
+
+    #registration-form {
+        float: left;
+        width:40%; /* The width is 60%, by default */
+    }
+
+    @media screen and (min-width:1021px) {
+        h3 {
+            width: 48%;
+        }
+    }
+
+    @media screen and (max-width:1020px) {
+        #course2 {
+            margin-top: 292px;
+            right: -5px;
+            position: absolute;
+            width: 100%;
+        }
+        #login-form {
+            width:60%; /* The width is 20%, by default */
+            margin-bottom: 72px;
+            margin-left: 20%;
+
+        }
+
+        #registration-form {
+            margin-left: 20%;
+            width:60%; /* The width is 60%, by default */
+        }
+        h1 {
+            margin-right: 85px;
+        }
+    }
+
+    /* Use a media query to add a break point at 800px: */
+    @media screen and (max-width:1020px) {
+        #course1, #course2 {
+            width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+    }
+</style>
+
+<body>
+<div class="container">
+    <header>
+        <h1>IT Course Viewer</h1>
+    </header>
+    <main>
+        <article>
+
+            <h3 id="course1">Log in</h3>
+            <h3 id="course2">Register</h3>
+
+            <button onclick="topFunction()" id="myBtn" class="fadeIn" title="Scroll back to top of page">Scroll to top</button>
+
+            <button id="myBtn2" href=”#” onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
+            <button id="myBtn3" href=”#” onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
+
+                <div class="left">
+                    <form id="login-form" class="light-border">
+                        <div>
+                            <label>Email:</label>
+                            <input class="light-border" type="text" name="username"/>
+                        </div>
+                        <div>
+                            <label>Password:</label>
+                            <input class="light-border" type="password" name="password"/>
+                        </div>
+                        <div>
+                            <button id="myBtn4" type="submit">Log in</button>
+                        </div>
+                    </form>
+                </div>
+
+                    <div class="right">
+                        <form id="registration-form" class="light-border">
+                            <div>
+                                <label>Username:</label>
+                                <input class="light-border" type="text" name="username"/>
+                            </div>
+                            <div>
+                                <label>Email:</label>
+                                <input class="light-border" type="text" name="username"/>
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                <input class="light-border" type="password" name="password"/>
+                            </div>
+                            <div>
+                                <button id="myBtn5" type="submit">Register</button>
+                            </div>
+                        </form>
+                    </div>
+
+        </article>
+    </main>
+</div>
+</body>
+</html>
