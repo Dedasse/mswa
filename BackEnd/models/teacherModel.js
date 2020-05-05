@@ -4,7 +4,7 @@ const promisePool = require('../database/db').promise();
 
 const getAllteachers = async () => {
   try {
-    const [rows] = await promisePool.query('SELECT      teacher_id,teachers.name  FROM teachers ');
+    const [rows] = await promisePool.query('SELECT      teacher_id,teachers.name,teachers.picture  FROM teachers ');
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -15,7 +15,7 @@ const getAllteachers = async () => {
 
 const getteacher = async (id) => {
   try {
-    const [rows] = await promisePool.query('SELECT teachers.name FROM teachers  WHERE  teacher_id = ? ' , [ id ]);
+    const [rows] = await promisePool.query('SELECT * FROM teachers  WHERE  teacher_id = ? ' , [ id ]);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -36,7 +36,7 @@ const insertteacher = async (user) => {
 const updateteacher = async (user) => {
   try {
     console.log('insert teacher?', user);
-    const [rows] = await promisePool.query('UPDATE teachers SET name = ?, picture = ? WHERE teachers.teacher_id = ?', [ user.name, user.picture, user.teacher_id ]);
+    const [rows] = await promisePool.query('UPDATE teachers SET name = ?, picture = ? WHERE teachers.teacher_id = ?', [ user.name, user.filename, user.teacher_id ]);
     
     return rows;
   } catch (e) {

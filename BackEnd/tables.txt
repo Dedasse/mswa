@@ -4,7 +4,7 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL UNIQUE,
   `password` varchar(100) NOT NULL,
   `isAdmin` boolean
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+);
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`,`isAdmin`) VALUES
 (1, 'Mikael Ylivaara', 'mikaely@metropolia.fi', '$2a$10$5RzpyimIeuzNqW7G8seBiOzBiWBvrSWroDomxMa0HzU6K2ddSgixS','1'),
@@ -68,7 +68,7 @@ ALTER TABLE courses
  FOREIGN KEY (`fk_period_id`) REFERENCES periods(period_id),
   FOREIGN KEY (`fk_teacher_id`) REFERENCES teachers(teacher_id) 
 
-CREATE TABLE `course_info` (
+CREATE TABLE `course_infos` (
   `info_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `fk_course_id` int(11) NOT NULL ,
   `name` varchar(50) NOT NULL,
@@ -147,8 +147,14 @@ puitteissa kirjoittamiseen.');
 CREATE TABLE `user_notes` (
   `note_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `who_id` int(11) NOT NULL ,
-  `where_id` int(11) NOT NULL,
-  `message` text NOT NULL
+  `fcourse_id` int NOT NULL ,
+  `fteacher_id`int NOT NULL,
+  `finfo_id`int NOT NULL,
+  `message` text NOT NULL,
+  FOREIGN KEY (`who_id`) REFERENCES users(user_id),
+  FOREIGN KEY (`fcourse_id`) REFERENCES courses(course_id),
+  FOREIGN KEY (`fteacher_id`) REFERENCES teachers(teacher_id),
+  FOREIGN KEY (`finfo_id`) REFERENCES course_info(info_id)
 );
 
 INSERT INTO `teachers` (`teacher_id`,`name`,`picture`) VALUES

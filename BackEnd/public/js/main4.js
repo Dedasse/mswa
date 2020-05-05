@@ -19,8 +19,9 @@ const createCatCards = (cats) => {
   ul.innerHTML = '';
   cats.forEach((cat) => {
     // create li with DOM methods
+    console.log(cats);
     const img = document.createElement('img');
-    img.src = url + '/' + cat.filename;
+    img.src = url + '/' + cat.picture;
     img.alt = cat.name;
     img.classList.add('resp');
 
@@ -61,7 +62,7 @@ const createCatCards = (cats) => {
         },
       };
       try {
-        const response = await fetch(url + '/cat/' + cat.cat_id, fetchOptions);
+        const response = await fetch(url + '/teacher/' + teachers.teacher_id, fetchOptions);
         const json = await response.json();
         console.log('delete response', json);
         getCat();
@@ -95,7 +96,7 @@ const getCat = async () => {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
       },
     };
-    const response = await fetch(url + '/period', options);
+    const response = await fetch(url + '/teacher', options);
     const cats = await response.json();
     createCatCards(cats);
   }
@@ -148,7 +149,7 @@ addForm.addEventListener('submit', async (evt) => {
     },
     body: fd,
   };
-  const response = await fetch(url + '/cat', fetchOptions);
+  const response = await fetch(url + '/teacher', fetchOptions);
   const json = await response.json();
   console.log('add response', json);
   getCat();
@@ -175,6 +176,7 @@ modForm.addEventListener('submit', async (evt) => {
 });
 
 // login
+main.style.display = 'block';
 loginForm.addEventListener('submit', async (evt) => {
   evt.preventDefault();
   const data = serializeJson(loginForm);
@@ -197,7 +199,7 @@ loginForm.addEventListener('submit', async (evt) => {
     // show/hide forms + cats
     loginWrapper.style.display = 'none';
     logOut.style.display = 'block';
-    main.style.display = 'block';
+    
     userInfo.innerHTML = `Hello ${json.user.name}`;
     getCat();
     getUsers();

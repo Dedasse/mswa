@@ -16,8 +16,8 @@ router.get('/:id', periodController.period_get);
 
 router.post('/', periodController.period_post);
 
-router.put('/',[passport.authenticate('jwt', {session: false}),admin], periodController.period_put);
+router.put('/',[passport.authenticate('jwt', {session: false}),admin], periodController.period_put);//only for Admin user
 
-router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], periodController.period_delete);
+router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], periodController.period_delete);//only for adminuser
 
 module.exports = router;
