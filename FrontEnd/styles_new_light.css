@@ -1,0 +1,304 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    background-color: white;
+}
+
+h1, h2, h3, h4 {
+    color: black;
+    text-align: center;
+}
+
+h3, h4 {
+    width: 24%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.header {
+    text-align: center;
+}
+
+.period1, .period2, .period3, .period4 {
+    position: relative;
+
+}
+
+.period1 {
+    width: 24%;
+
+    border: 2px solid purple;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.period2 {
+
+    bottom: 413px;
+    width: 24%;
+    border: 2px solid purple;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.period3 {
+
+    bottom: 767px;
+    width: 24%;
+    border: 2px solid purple;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.period4 {
+
+    bottom: 1121px;
+    width: 24%;
+    border: 2px solid purple;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.container {
+    max-width: 100%;
+    margin: auto;
+    padding: 1em;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    border: 2px solid #ccc;
+    font-size: 13px;
+    font-weight: 100;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    border-radius: 25px;
+    padding: 15px 43px 15px 43px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.light-border {
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+li {
+    width: 30%;
+    margin: .5em;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.resp {
+    width: 100%;
+}
+
+.forms {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-wrapper {
+    width: 33%;
+}
+
+input, button, select {
+    display: inline-block;
+    width: 100%;
+    margin: .5em 0;
+}
+
+select {
+    line-height: 1.5em;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+button{
+    background-color: black;
+    color: white;
+}
+
+button:hover{
+    background-color: red;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+    color: black;
+    background-color: white;
+}
+.wrapper {
+    /* order: 1px solid red; */
+}
+.inner {
+
+}
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox] ~ label {
+    cursor: pointer;
+    background: purple;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    display: block;
+    border-radius: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+
+}
+input[type=checkbox]:checked ~ label ~ .content {
+    opacity: 0;
+    height: 0;
+    display: none;
+}
+.content {
+    background: white;
+    /* height: 200px; */
+    padding: 16px;
+    display: block;
+    clear: both;
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 10px;
+    width: 60%;
+    height: 60%;
+}
+
+#myBtn {
+    width: 10%;
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: gray; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#myBtn:hover {
+    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+#myBtn2 {
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 15%;
+    background-color: gray; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+}
+
+#myBtn2:hover {
+    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+}
+
+#myBtn3 {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 15%;
+    background-color: gray; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+}
+
+#myBtn3:hover {
+    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+}
