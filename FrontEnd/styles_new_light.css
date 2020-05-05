@@ -2,11 +2,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Verdana;
-    background-color: black;
+    background-color: white;
 }
 
 h1, h2, h3, h4 {
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -178,8 +178,8 @@ button:hover{
 
 * {
     box-sizing: border-box;
-    color: lightgray;
-    background-color: black;
+    color: black;
+    background-color: white;
 }
 .wrapper {
     /* order: 1px solid red; */
@@ -209,7 +209,7 @@ input[type=checkbox]:checked ~ label ~ .content {
     display: none;
 }
 .content {
-    background: black;
+    background: white;
     /* height: 200px; */
     padding: 16px;
     display: block;
@@ -224,7 +224,7 @@ img {
 }
 
 #myBtn {
-    width: 15%;
+    width: 10%;
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     bottom: 20px; /* Place the button at the bottom of the page */
@@ -264,7 +264,7 @@ img {
 }
 
 #myBtn2 {
-    display: none;
+
     position: absolute;
     top: 20px;
     right: 20px;
@@ -284,6 +284,7 @@ img {
 }
 
 #myBtn3 {
+    display: none;
     position: absolute;
     top: 20px;
     right: 20px;
