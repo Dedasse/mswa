@@ -4,7 +4,7 @@ const promisePool = require('../database/db').promise();
 
 const getAllPeriods = async () => {
   try {
-    const [rows] = await promisePool.query('SELECT      period_id,periods.name  FROM periods ');
+    const [rows] = await promisePool.query('SELECT periods.period_id as opinto_id,periods.name as Period_name,courses.name as course_name, teachers.name as teacher_name,course_infos.information as course_info,teachers.picture as teacher_photo FROM periods INNER JOIN courses ON courses.fk_period_id = periods.period_id INNER JOIN teachers ON teachers.teacher_id = courses.fk_teacher_id INNER JOIN course_infos ON course_infos.info_id = courses.course_id ');
     return rows;
   } catch (e) {
     console.error('error', e.message);
