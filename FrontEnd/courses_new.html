@@ -109,39 +109,45 @@
         <h1>IT Course Viewer</h1>
     </header>
     <main>
-        <article>
+        <section>
             <button onclick="topFunction()" id="myBtn" class="fadeIn" title="Scroll back to top of page">Scroll to top
             </button>
-
             <button id="myBtn2" onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
             <button id="myBtn3" onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
-        </article>
+        </section>
 
-        <article>
+        <section>
             <h3 id="course1">Älykkäät IoT-laitteet</h3>
-        </article>
+            <div id="content1">
+            </div>
+        </section>
 
-        <article>
+        <section>
             <h3 id="course2">Mobiilit terveyssovellukset</h3>
-        </article>
+            <div id="content2">
+            </div>
+        </section>
 
-        <article>
+        <section>
             <h3 id="course3">Pelikehitys</h3>
-        </article>
+            <div id="content3">
+            </div>
+        </section>
 
-        <article>
+        <section>
             <h4 id="course4" style="width:22.1%">Web-tekniikat ja digitaalinen media</h4>
-        </article>
-
-        <div id="content">
-
-        </div>
+            <div id="content4">
+            </div>
+        </section>
     </main>
 </div>
 
 <script>
 
-    const seppo = document.getElementById('content');
+    const seppo1 = document.getElementById('content1');
+    const seppo2 = document.getElementById('content2');
+    const seppo3 = document.getElementById('content3');
+    const seppo4 = document.getElementById('content4');
 
     const mybutton = document.getElementById("myBtn");
 
@@ -164,24 +170,16 @@
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
-    // var children = [{num: 6, name: 'me', phone: 7}, {num: 8, name: 'him', phone: 9} , {num: 8, name: 'him', phone: 9}];
-    // var children = [{num2: 6, name2: 'me', phone2: 7}, {num2: 8, name: 'him', phone: 9} , {num3: 8, name: 'him', phone: 9}];
-
-    const checkbox = document.createElement('input'); // TODO
-
     const funktio = (children) => {
 
-
-        // var table = document.createElement('table');
-
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 24; i++) {
 
             const child = children[i];
 
             if (`${child.opinto_id}` == 1) {
 
-                let s = `
-        <section id="content1">
+                let s1 = `
+        <section>
             <div class="period1 outerLeft">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -194,9 +192,8 @@
         </section>
             `;
 
-                seppo.innerHTML += s;
+                seppo1.innerHTML += s1;
 
-                // var row = table.insertRow();
                 Object.keys(child).forEach(function (k) {
                     console.log(k);
                     console.log(child);
@@ -210,16 +207,14 @@
             }
         }
 
-        for (var i = 7; i < 13; i++) {
+        for (var i = 0; i < 24; i++) {
 
             var child = children[i];
-            var periodCheck = false;
 
             if (`${child.opinto_id}` == 2) {
-                periodCheck = true;
 
-                let s = `
-        <section id="content2">
+                let s2 = `
+        <section>
             <div class="period2 innerLeft">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -232,9 +227,8 @@
         </section>
             `;
 
-                seppo.innerHTML += s;
+                seppo2.innerHTML += s2;
 
-                // var row = table.insertRow();
                 Object.keys(child).forEach(function (k) {
                     console.log(k);
                     console.log(child);
@@ -248,16 +242,14 @@
             }
         }
 
-        for (var i = 13; i < 19; i++) {
+        for (var i = 0; i < 24; i++) {
 
             var child = children[i];
-            var periodCheck = false;
 
             if (`${child.opinto_id}` == 3) {
-                periodCheck = true;
 
-                let s = `
-        <section id="content3">
+                let s3 = `
+        <section>
             <div class="period3 innerRight">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -270,9 +262,8 @@
         </section>
             `;
 
-                seppo.innerHTML += s;
+                seppo3.innerHTML += s3;
 
-                // var row = table.insertRow();
                 Object.keys(child).forEach(function (k) {
                     console.log(k);
                     console.log(child);
@@ -286,16 +277,14 @@
             }
         }
 
-        for (var i = 19; i < 24; i++) {
+        for (var i = 0; i < 24; i++) {
 
             var child = children[i];
-            var periodCheck = false;
 
             if (`${child.opinto_id}` == 4) {
-                periodCheck = true;
 
-                let s = `
-        <section id="content4">
+                let s4 = `
+        <section>
             <div class="period4 outerRight">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -308,7 +297,7 @@
         </section>
             `;
 
-                seppo.innerHTML += s;
+                seppo4.innerHTML += s4;
 
                 Object.keys(child).forEach(function (k) {
                     console.log(k);
