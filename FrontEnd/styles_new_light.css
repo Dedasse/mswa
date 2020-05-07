@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: Verdana;
     background-color: white;
-    background-image: url('images/metropolia_kesa5.jpg');
+    background-image: url('images/metropolia_kesa6.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -339,7 +339,7 @@ img {
 
 .modal-content {
     background-color: rgba(256, 256, 256, 0.6);
-    margin: 0.6% 77.55% auto;
+    margin: 1.8% 77.55% auto;
     border: 3px solid darkslateblue;
     width: 20.4%;
     border-radius: 10px;
