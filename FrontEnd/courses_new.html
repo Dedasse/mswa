@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jans Media Sharing App</title>
+    <title>IT Course Viewer</title>
     <link href="./styles_new.css" rel="stylesheet" type="text/css" title="default">
     <link href="./styles_new_light.css" rel="alternate stylesheet" type="text/css" title="alternate">
     <script type="text/javascript" src="./styleSwitcher.js"></script>
@@ -45,6 +45,13 @@
         }
 
         @media screen and (max-width: 1020px) {
+            #login2 {
+                margin-top: 292px;
+                right: -5px;
+                position: absolute;
+                width: 100%;
+            }
+
             .innerLeft {
                 bottom: -70px;
             }
@@ -98,6 +105,10 @@
             .outerLeft, .innerLeft, .innerRight, .outerRight {
                 width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
             }
+
+            #login1, #login2 {
+                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
         }
     </style>
 
@@ -109,35 +120,86 @@
         <h1>IT Course Viewer</h1>
     </header>
     <main>
-        <section>
-            <button onclick="topFunction()" id="myBtn" class="fadeIn" title="Scroll back to top of page">Scroll to top
+        <section id="login-registration">
+            <h3 id="login1">Log in</h3>
+            <h3 id="login2">Register</h3>
+
+            <button onclick="topFunction()" id="myBtnCopy" class="fadeIn" title="Scroll back to top of page">Scroll to
+                top
             </button>
-            <button id="myBtn2" onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
-            <button id="myBtn3" onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
-        </section>
 
-        <section>
-            <h3 id="course1">Älykkäät IoT-laitteet</h3>
-            <div id="content1">
+            <button class="myBtn2" onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
+            <button class="myBtn3" onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
+
+            <div class="left">
+                <form id="login-form" class="light-border">
+                    <div>
+                        <label>Email:</label>
+                        <input class="light-border" type="text" name="username"/>
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input class="light-border" type="password" name="password"/>
+                    </div>
+                    <div>
+                        <button href="courses_new.html" id="myBtn4" type="submit">Log in</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="right">
+                <form id="registration-form" class="light-border">
+                    <div>
+                        <label>Username:</label>
+                        <input class="light-border" type="text" name="username"/>
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <input class="light-border" type="text" name="username"/>
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input class="light-border" type="password" name="password"/>
+                    </div>
+                    <div>
+                        <button href="courses_new.html" id="myBtn5" type="submit">Register</button>
+                    </div>
+                </form>
             </div>
         </section>
 
-        <section>
-            <h3 id="course2">Mobiilit terveyssovellukset</h3>
-            <div id="content2">
-            </div>
-        </section>
+        <section id="actual_content">
+            <section>
+                <button onclick="topFunction()" id="myBtn" class="fadeIn" title="Scroll back to top of page">Scroll to
+                    top
+                </button>
+                <button class="myBtn2" onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
+                <button class="myBtn3" onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
+            </section>
 
-        <section>
-            <h3 id="course3">Pelikehitys</h3>
-            <div id="content3">
-            </div>
-        </section>
+            <section>
+                <h3 id="course1">Älykkäät IoT-laitteet</h3>
+                <div id="content1">
+                </div>
+            </section>
 
-        <section>
-            <h4 id="course4" style="width:22.1%">Web-tekniikat ja digitaalinen media</h4>
-            <div id="content4">
-            </div>
+            <section>
+                <h3 id="course2">Mobiilit terveyssovellukset</h3>
+                <div id="content2">
+                </div>
+            </section>
+
+            <section>
+                <h3 id="course3">Pelikehitys</h3>
+                <div id="content3">
+                </div>
+            </section>
+
+            <section>
+                <h4 id="course4" style="width:22.1%">Web-tekniikat ja digitaalinen media</h4>
+                <div id="content4">
+                </div>
+            </section>
         </section>
     </main>
 </div>
@@ -186,7 +248,7 @@
                 <label for="toggle${i}" title="Show course contents">${child.course_name}</label>
             <div class="content">
                 <p>Opettaja: ${child.teacher_name}</p>
-                <p><img src="${child.teacher_photo}" height=200 alt="Course teacher"></p>
+                <p><img src="thumbnails/${child.teacher_photo}" height=200 alt="Course teacher"></p>
             <p>${child.course_info}</p>
             </div>
         </section>
@@ -221,7 +283,7 @@
                 <label for="toggle${i}" title="Show course contents">${child.course_name}</label>
             <div class="content">
                 <p>Opettaja: ${child.teacher_name}</p>
-                <p><img src="${child.teacher_photo}" height="200" alt="Course teacher"></p>
+                <p><img src="thumbnails/${child.teacher_photo}" height=200 alt="Course teacher"></p>
             <p>${child.course_info}</p>
             </div>
         </section>
@@ -256,7 +318,7 @@
                 <label for="toggle${i}" title="Show course contents">${child.course_name}</label>
             <div class="content">
                 <p>Opettaja: ${child.teacher_name}</p>
-                <p><img src="${child.teacher_photo}" height="200" alt="Course teacher"></p>
+                <p><img src="thumbnails/${child.teacher_photo}" height=200 alt="Course teacher"></p>
             <p>${child.course_info}</p>
             </div>
         </section>
@@ -291,7 +353,7 @@
                 <label for="toggle${i}" title="Show course contents">${child.course_name}</label>
             <div class="content">
                 <p>Opettaja: ${child.teacher_name}</p>
-                <p><img src="${child.teacher_photo}" height="200" alt="Course teacher"></p>
+                <p><img src="thumbnails/${child.teacher_photo}" height=200 alt="Course teacher"></p>
             <p>${child.course_info}</p>
             </div>
         </section>

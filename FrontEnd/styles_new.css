@@ -5,6 +5,14 @@ body {
     background-color: black;
 }
 
+#login-registration {
+    display: none;
+}
+
+#actual_content {
+
+}
+
 #login-form {
     border: 3px solid gray;
     padding: 16px;
@@ -236,7 +244,7 @@ img {
     height: 60%;
 }
 
-#myBtn {
+#myBtn, #myBtnCopy {
     width: 15%;
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -257,7 +265,7 @@ img {
     animation-fill-mode: both;
 }
 
-#myBtn:hover {
+#myBtn:hover, #myBtnCopy:hover {
     background-color: rebeccapurple; /* Add a dark-grey background on hover */
 }
 
@@ -276,7 +284,7 @@ img {
     animation-name: fadeIn;
 }
 
-#myBtn2 {
+.myBtn2 {
     display: none;
     position: absolute;
     top: 20px;
@@ -292,11 +300,11 @@ img {
     outline: none; /* Remove outline */
 }
 
-#myBtn2:hover {
+.myBtn2:hover {
     background-color: rebeccapurple; /* Add a dark-grey background on hover */
 }
 
-#myBtn3 {
+.myBtn3 {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -311,7 +319,7 @@ img {
     outline: none; /* Remove outline */
 }
 
-#myBtn3:hover {
+.myBtn3:hover {
     background-color: rebeccapurple; /* Add a dark-grey background on hover */
 }
 
