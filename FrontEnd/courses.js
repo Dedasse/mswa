@@ -1,3 +1,9 @@
+function startup(){
+    console.log('FUUUCK');
+};
+
+
+
 var children =
     [
         {
