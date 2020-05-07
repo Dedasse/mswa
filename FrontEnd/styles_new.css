@@ -5,6 +5,24 @@ body {
     background-color: black;
 }
 
+#login-form {
+    border: 3px solid gray;
+    padding: 16px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#registration-form {
+    border: 2px solid gray;
+    padding: 16px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
 h1, h2, h3, h4 {
     color: white;
     text-align: center;
@@ -113,7 +131,7 @@ h3, h4 {
 
 .light-border {
     border-radius: 5px;
-    border: 2px solid #ccc;
+    border: 3px solid gray;
     padding: 1em;
     box-sizing: border-box;
 }
@@ -138,11 +156,6 @@ figure {
 
 .resp {
     width: 100%;
-}
-
-.forms {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .form-wrapper {
@@ -172,7 +185,7 @@ button{
 }
 
 button:hover{
-    background-color: red;
+    background-color: purple;
     color: white;
 }
 
@@ -299,5 +312,35 @@ img {
 }
 
 #myBtn3:hover {
+    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+}
+
+#myBtn4 {
+    background-color: gray; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+}
+
+#myBtn4:hover {
+    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+}
+
+#myBtn5 {
+    background-color: gray; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+}
+
+#myBtn5:hover {
     background-color: rebeccapurple; /* Add a dark-grey background on hover */
 }
