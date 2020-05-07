@@ -3,6 +3,51 @@ body {
     padding: 0;
     font-family: Verdana;
     background-color: black;
+    background-image: url('images/metropolia_kesa4.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#periodFirst {
+    position: absolute;
+    width: 104%;
+    top: 0;
+    left: 0;
+}
+
+#periodSecond {
+    position: absolute;
+    width: 104%;
+    top: 0;
+    left: 106%;
+}
+
+#periodThird {
+    position: absolute;
+    width: 104%;
+    top: 0;
+    left: 212%;
+}
+
+#periodFourth {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 318%;
+}
+
+#courseBox {
+    border: 3px solid purple;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+#courseBox:hover {
+    border: 3px solid rebeccapurple;
 }
 
 #login-registration {
@@ -10,7 +55,8 @@ body {
 }
 
 #actual_content {
-
+    position: relative;
+    width: 23.92%;
 }
 
 #login-form {
@@ -36,8 +82,8 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
-h3, h4 {
-    width: 24%;
+h3 {
+    width: 100%;
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 5px;
@@ -46,150 +92,19 @@ h3, h4 {
     display: inline-block;
 }
 
-.header {
-    text-align: center;
-}
-
-.period1, .period2, .period3, .period4 {
-    position: relative;
-
-}
-
-.period1 {
-    width: 24%;
-
-    border: 2px solid purple;
+h4 {
+    width: 94%;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-.period2 {
-
-    bottom: 413px;
-    width: 24%;
-    border: 2px solid purple;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-.period3 {
-
-    bottom: 767px;
-    width: 24%;
-    border: 2px solid purple;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-.period4 {
-
-    bottom: 1121px;
-    width: 24%;
-    border: 2px solid purple;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 26px;
+    display: inline-block;
 }
 
 .container {
     max-width: 100%;
-    margin: auto;
     padding: 1em;
-}
-
-.inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
-
-.inputfile + label {
-    border: 2px solid #ccc;
-    font-size: 13px;
-    font-weight: 100;
-    color: white;
-    background-color: black;
-    display: inline-block;
-    border-radius: 25px;
-    padding: 15px 43px 15px 43px;
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
-}
-
-.light-border {
-    border-radius: 5px;
-    border: 3px solid gray;
-    padding: 1em;
-    box-sizing: border-box;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-li {
-    width: 30%;
-    margin: .5em;
-}
-
-figure {
-    margin: 0;
-    padding: 0;
-}
-
-.resp {
-    width: 100%;
-}
-
-.form-wrapper {
-    width: 33%;
-}
-
-input, button, select {
-    display: inline-block;
-    width: 100%;
-    margin: .5em 0;
-}
-
-select {
-    line-height: 1.5em;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat, repeat;
-    background-position: right .7em top 50%, 0 0;
-    background-size: .65em auto, 100%;
-}
-
-button{
-    background-color: black;
-    color: white;
 }
 
 button:hover{
@@ -197,45 +112,38 @@ button:hover{
     color: white;
 }
 
-* {
-    box-sizing: border-box;
-    color: lightgray;
-    background-color: black;
-}
-.wrapper {
-    /* order: 1px solid red; */
-}
-.inner {
-
-}
 input[type=checkbox] {
     display: none;
 }
+
 input[type=checkbox] ~ label {
     cursor: pointer;
     background: purple;
-    height: 50px;
-    color: #fff;
+    height: 30px;
+    color: white;
     text-align: center;
-    padding: 16px;
     display: block;
     border-radius: 5px;
-    margin-left: -5px;
-    margin-right: -5px;
-
+    margin: 5px 1px;
+    padding-top: 10px;
 }
+
+input[type=checkbox] ~ label:hover {
+    background-color: rebeccapurple;
+}
+
 input[type=checkbox]:checked ~ label ~ .content {
     opacity: 0;
     height: 0;
     display: none;
 }
 .content {
-    background: black;
-    /* height: 200px; */
-    padding: 16px;
+    background: rgba(0, 0, 0, 0.0);
+    padding: 10px;
     display: block;
     clear: both;
     border-radius: 10px;
+    color: white;
 }
 
 img {
@@ -245,20 +153,20 @@ img {
 }
 
 #myBtn, #myBtnCopy {
-    width: 15%;
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: gray; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 9%;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    z-index: 99;
+    display: none;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -266,7 +174,7 @@ img {
 }
 
 #myBtn:hover, #myBtnCopy:hover {
-    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+    background-color: rebeccapurple;
 }
 
 @-webkit-keyframes fadeIn {
@@ -285,70 +193,72 @@ img {
 }
 
 .myBtn2 {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 10%;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    z-index: 99;
     display: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 15%;
-    background-color: gray; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
 }
 
 .myBtn2:hover {
-    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+    background-color: rebeccapurple;
 }
 
 .myBtn3 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 15%;
-    background-color: gray; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 8%;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    z-index: 99;
 }
 
 .myBtn3:hover {
-    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+    background-color: rebeccapurple;
 }
 
 #myBtn4 {
-    background-color: gray; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
 }
 
 #myBtn4:hover {
-    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+    background-color: rebeccapurple;
 }
 
 #myBtn5 {
-    background-color: gray; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
 }
 
 #myBtn5:hover {
-    background-color: rebeccapurple; /* Add a dark-grey background on hover */
+    background-color: rebeccapurple;
 }
