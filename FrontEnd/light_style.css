@@ -25,3 +25,8 @@ button {
     font-size: 1.5rem;
     padding: 10px;
 }
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}

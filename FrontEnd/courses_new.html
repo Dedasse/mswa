@@ -1,95 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jans Media Sharing App</title>
     <link href="./styles_new.css" rel="stylesheet" type="text/css" title="default">
     <link href="./styles_new_light.css" rel="alternate stylesheet" type="text/css" title="alternate">
     <script type="text/javascript" src="./styleSwitcher.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .outerLeft {
+            width: 24%; /* The width is 20%, by default */
+        }
+
+        .innerLeft {
+            width: 24%; /* The width is 60%, by default */
+        }
+
+        .innerRight {
+            width: 24%; /* The width is 20%, by default */
+        }
+
+        .outerRight {
+            width: 24%; /* The width is 20%, by default */
+        }
+
+        @media screen and (min-width: 1021px) {
+            .innerLeft {
+                left: 25%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+
+            .innerRight {
+                left: 50%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+
+            .outerRight {
+
+                left: 75%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+        }
+
+        @media screen and (max-width: 1020px) {
+            .innerLeft {
+                bottom: -70px;
+            }
+
+            .innerRight {
+                bottom: -140px;
+            }
+
+            .outerRight {
+                bottom: -210px;
+            }
+
+            #course1 {
+                width: 100%;
+            }
+
+            #course2 {
+                margin-top: 433px;
+                right: -5px;
+                position: absolute;
+                width: 100%;
+            }
+
+            #course3 {
+                margin-top: 858px;
+                right: -5px;
+                position: absolute;
+                width: 100%;
+            }
+
+            #course4 {
+                margin-top: 1282px;
+                right: -5px;
+                position: absolute;
+                width: 100%;
+                min-width: 100%;
+            }
+
+            img {
+                width: 20%;
+                height: 20%;
+            }
+
+            h1 {
+                margin-right: 85px;
+            }
+        }
+
+        /* Use a media query to add a break point at 800px: */
+        @media screen and (max-width: 1020px) {
+            .outerLeft, .innerLeft, .innerRight, .outerRight {
+                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+        }
+    </style>
+
 </head>
-
-<style>
-    * {
-        box-sizing:border-box;
-    }
-
-    .outerLeft {
-        width:24%; /* The width is 20%, by default */
-    }
-
-    .innerLeft {
-        width:24%; /* The width is 60%, by default */
-    }
-
-    .innerRight {
-        width:24%; /* The width is 20%, by default */
-    }
-
-    .outerRight {
-        width:24%; /* The width is 20%, by default */
-    }
-
-    @media screen and (min-width:1021px) {
-        .innerLeft {
-            left: 25%; /* The width is 100%, when the viewport is 800px or smaller */
-         }
-        .innerRight {
-            left: 50%; /* The width is 100%, when the viewport is 800px or smaller */
-        }
-        .outerRight {
-
-            left: 75%; /* The width is 100%, when the viewport is 800px or smaller */
-        }
-    }
-
-    @media screen and (max-width:1020px) {
-        .innerLeft {
-            bottom: -70px;
-        }
-        .innerRight {
-            bottom: -140px;
-        }
-        .outerRight {
-            bottom: -210px;
-        }
-        #course1 {
-            width: 100%;
-        }
-        #course2 {
-             margin-top: 433px;
-             right: -5px;
-             position: absolute;
-             width: 100%;
-         }
-        #course3 {
-            margin-top: 858px;
-            right: -5px;
-            position: absolute;
-            width: 100%;
-        }
-        #course4 {
-            margin-top: 1282px;
-            right: -5px;
-            position: absolute;
-            width: 100%;
-            min-width: 100%;
-        }
-        img {
-            width: 20%;
-            height: 20%;
-        }
-        h1 {
-            margin-right: 85px;
-        }
-    }
-
-    /* Use a media query to add a break point at 800px: */
-    @media screen and (max-width:1020px) {
-        .outerLeft, .innerLeft, .innerRight, .outerRight {
-            width:100%; /* The width is 100%, when the viewport is 800px or smaller */
-        }
-    }
-</style>
 
 <body>
 <div class="container">
@@ -98,68 +110,78 @@
     </header>
     <main>
         <article>
+            <button onclick="topFunction()" id="myBtn" class="fadeIn" title="Scroll back to top of page">Scroll to top
+            </button>
 
+            <button id="myBtn2" onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
+            <button id="myBtn3" onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
+        </article>
+
+        <article>
             <h3 id="course1">Älykkäät IoT-laitteet</h3>
+        </article>
+
+        <article>
             <h3 id="course2">Mobiilit terveyssovellukset</h3>
+        </article>
+
+        <article>
             <h3 id="course3">Pelikehitys</h3>
+        </article>
+
+        <article>
             <h4 id="course4" style="width:22.1%">Web-tekniikat ja digitaalinen media</h4>
+        </article>
 
-            <button onclick="topFunction()" id="myBtn" class="fadeIn" title="Scroll back to top of page">Scroll to top</button>
+        <div id="content">
 
-            <button id="myBtn2" href=”#” onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
-            <button id="myBtn3" href=”#” onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
+        </div>
+    </main>
+</div>
 
-            <script src="courses.js"></script>
+<script>
 
-            <script>
+    const seppo = document.getElementById('content');
 
-                mybutton = document.getElementById("myBtn");
+    const mybutton = document.getElementById("myBtn");
 
-                // When the user scrolls down 20px from the top of the document, show the button
-                window.onscroll = function() {scrollFunction()};
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
 
-                function scrollFunction() {
-                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                        mybutton.style.display = "block";
-                    } else {
-                        mybutton.style.display = "none";
-                    }
-                }
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
 
-                // When the user clicks on the button, scroll to the top of the document
-                function topFunction() {
-                    document.body.scrollTop = 0; // For Safari
-                    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-                }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
 
-                // var children = [{num: 6, name: 'me', phone: 7}, {num: 8, name: 'him', phone: 9} , {num: 8, name: 'him', phone: 9}];
-                // var children = [{num2: 6, name2: 'me', phone2: 7}, {num2: 8, name: 'him', phone: 9} , {num3: 8, name: 'him', phone: 9}];
+    // var children = [{num: 6, name: 'me', phone: 7}, {num: 8, name: 'him', phone: 9} , {num: 8, name: 'him', phone: 9}];
+    // var children = [{num2: 6, name2: 'me', phone2: 7}, {num2: 8, name: 'him', phone: 9} , {num3: 8, name: 'him', phone: 9}];
 
-                function addHeaders(table, keys) {
+    const checkbox = document.createElement('input'); // TODO
 
-                    var row = table.insertRow();
-                    for( var i = 0; i < keys.length; i++ ) {
-                        var cell = row.insertCell();
-                        cell.appendChild(document.createTextNode(keys[i]));
+    const funktio = (children) => {
 
 
-                    }
-                }
+        // var table = document.createElement('table');
 
-                var checkbox = document.createElement('input'); // TODO
+        for (let i = 0; i < 7; i++) {
 
-                // var table = document.createElement('table');
+            const child = children[i];
 
-                    for (var i = 0; i < 7; i++) {
+            if (`${child.opinto_id}` == 1) {
 
-                        var child = children[i];
-                        var periodCheck = false;
-
-                        if (`${child.opinto_id}` == 1) {
-                            periodCheck = true;
-
-                            let s = `
-        <section>
+                let s = `
+        <section id="content1">
             <div class="period1 outerLeft">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -172,32 +194,32 @@
         </section>
             `;
 
-                            document.write(s);
+                seppo.innerHTML += s;
 
-                                // var row = table.insertRow();
-                                Object.keys(child).forEach(function (k) {
-                                    console.log(k);
-                                    console.log(child);
+                // var row = table.insertRow();
+                Object.keys(child).forEach(function (k) {
+                    console.log(k);
+                    console.log(child);
 
-                                    let x = document.createElement('h1');
-                                    x.value = "Foo";
+                    let x = document.createElement('h1');
+                    x.value = "Foo";
 
-                                    x.appendChild(document.createTextNode(child[k]));
+                    x.appendChild(document.createTextNode(child[k]));
 
-                                })
-                            }
-                    }
+                })
+            }
+        }
 
-                for (var i = 7; i < 13; i++) {
+        for (var i = 7; i < 13; i++) {
 
-                    var child = children[i];
-                    var periodCheck = false;
+            var child = children[i];
+            var periodCheck = false;
 
-                    if (`${child.opinto_id}` == 2) {
-                        periodCheck = true;
+            if (`${child.opinto_id}` == 2) {
+                periodCheck = true;
 
-                        let s = `
-        <section>
+                let s = `
+        <section id="content2">
             <div class="period2 innerLeft">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -210,32 +232,32 @@
         </section>
             `;
 
-                        document.write(s);
+                seppo.innerHTML += s;
 
-                        // var row = table.insertRow();
-                        Object.keys(child).forEach(function (k) {
-                            console.log(k);
-                            console.log(child);
+                // var row = table.insertRow();
+                Object.keys(child).forEach(function (k) {
+                    console.log(k);
+                    console.log(child);
 
-                            let x = document.createElement('h1');
-                            x.value = "Foo";
+                    let x = document.createElement('h1');
+                    x.value = "Foo";
 
-                            x.appendChild(document.createTextNode(child[k]));
+                    x.appendChild(document.createTextNode(child[k]));
 
-                        })
-                    }
-                }
+                })
+            }
+        }
 
-                for (var i = 13; i < 19; i++) {
+        for (var i = 13; i < 19; i++) {
 
-                    var child = children[i];
-                    var periodCheck = false;
+            var child = children[i];
+            var periodCheck = false;
 
-                    if (`${child.opinto_id}` == 3) {
-                        periodCheck = true;
+            if (`${child.opinto_id}` == 3) {
+                periodCheck = true;
 
-                        let s = `
-        <section>
+                let s = `
+        <section id="content3">
             <div class="period3 innerRight">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -248,32 +270,32 @@
         </section>
             `;
 
-                        document.write(s);
+                seppo.innerHTML += s;
 
-                        // var row = table.insertRow();
-                        Object.keys(child).forEach(function (k) {
-                            console.log(k);
-                            console.log(child);
+                // var row = table.insertRow();
+                Object.keys(child).forEach(function (k) {
+                    console.log(k);
+                    console.log(child);
 
-                            let x = document.createElement('h1');
-                            x.value = "Foo";
+                    let x = document.createElement('h1');
+                    x.value = "Foo";
 
-                            x.appendChild(document.createTextNode(child[k]));
+                    x.appendChild(document.createTextNode(child[k]));
 
-                        })
-                    }
-                }
+                })
+            }
+        }
 
-                for (var i = 19; i < 24; i++) {
+        for (var i = 19; i < 24; i++) {
 
-                    var child = children[i];
-                    var periodCheck = false;
+            var child = children[i];
+            var periodCheck = false;
 
-                    if (`${child.opinto_id}` == 4) {
-                        periodCheck = true;
+            if (`${child.opinto_id}` == 4) {
+                periodCheck = true;
 
-                        let s = `
-        <section>
+                let s = `
+        <section id="content4">
             <div class="period4 outerRight">
                 <div class="inner">
                 <input type="checkbox" id="toggle${i}" checked>
@@ -286,46 +308,32 @@
         </section>
             `;
 
-                        document.write(s);
+                seppo.innerHTML += s;
 
-                        // var row = table.insertRow();
-                        Object.keys(child).forEach(function (k) {
-                            console.log(k);
-                            console.log(child);
+                Object.keys(child).forEach(function (k) {
+                    console.log(k);
+                    console.log(child);
 
-                            let x = document.createElement('h1');
-                            x.value = "Foo";
+                    let x = document.createElement('h1');
+                    x.value = "Foo";
 
-                            x.appendChild(document.createTextNode(child[k]));
+                    x.appendChild(document.createTextNode(child[k]));
 
-                        })
-                    }
-                }
+                })
+            }
+        }
 
-                document.getElementById('container').appendChild(table);
+    }
 
-                // click.js
-                const btn = document.getElementById('foo');
+    const haeTiedot = async () => {
+        const vastaus = await fetch('http://localhost:3000/period');
+        const tiedot = await vastaus.json();
+        funktio(tiedot)
+    }
 
-                btn.addEventListener('click', (event) => {
+    haeTiedot()
 
-                    console.log('clicked');
+</script>
 
-                    // let x = document.getElementById("0");
-                    // x.innerHTML = "fasdfasfdas";
-                    // cell.appendChild(document.createTextNode(child[k]));
-
-                });
-            </script>
-            <figure>
-                <!--<img src="http://placekitten.com/320/160" alt="title">-->
-                <!--<figcaption>Test</figcaption>-->
-            </figure>
-        </article>
-    </main>
-    <footer>
-        <!--<p>Test</p>-->
-    </footer>
-</div>
 </body>
 </html>
