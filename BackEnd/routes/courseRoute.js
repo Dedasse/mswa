@@ -14,9 +14,9 @@ router.get('/:id', courseController.course_get);
 
 router.post('/', courseController.course_post);
 
-router.put('/',[passport.authenticate('jwt', {session: false}),admin], courseController.course_put);
+router.put('/',[passport.authenticate('jwt', {session: false}),admin], courseController.course_put);//only for admin
 
-router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], courseController.course_delete);
+router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], courseController.course_delete); //only for admin
 
 
 

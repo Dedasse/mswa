@@ -16,8 +16,8 @@ router.post('/hack', (req, res) => {
 });
 
 
-router.put('/',[passport.authenticate('jwt', {session: false}),admin], userController.user_put);
+router.put('/', userController.user_put);
 
-router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], userController.user_delete);
+router.delete('/:id', userController.user_delete);
 
 module.exports = router;

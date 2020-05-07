@@ -22,13 +22,13 @@ app.use(express.static('public'));
 app.use(express.static('uploads'));
 app.use('/thumbnails', express.static('thumbnails'));
 
-app.use('/teacher', teacherRoute);
-app.use('/course_info', courseinfoRoute);
-app.use('/user_note', user_noteRoute);
+app.use('/teacher',passport.authenticate('jwt', {session: false}), teacherRoute); //passport gives access to registered user 
+app.use('/course_info',passport.authenticate('jwt', {session: false}), courseinfoRoute);
+app.use('/user_note',passport.authenticate('jwt', {session: false}), user_noteRoute);
 app.use('/auth', authRoute);
 app.use('/period', periodRoute);
-app.use('/course', courseRoute);
-app.use('/user', userRoute);
+app.use('/course',passport.authenticate('jwt', {session: false}), courseRoute);
+app.use('/user',[passport.authenticate('jwt', {session: false}),admin], userRoute);// only for admin route
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

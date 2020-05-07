@@ -11,11 +11,11 @@ router.get('/', user_noteController.user_note_list_get);
 
 router.get('/:id', user_noteController.user_note_get);
 
-router.post('/', user_noteController.user_note_post);
+router.post('/',passport.authenticate('jwt', {session: false}), user_noteController.user_note_post);
 
-router.put('/',[passport.authenticate('jwt', {session: false}),admin], user_noteController.user_note_put);
+router.put('/',passport.authenticate('jwt', {session: false}), user_noteController.user_note_put);
 
-router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], user_noteController.user_note_delete);
+router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], user_noteController.user_note_delete);//only for admin
 
 module.exports = router;
 

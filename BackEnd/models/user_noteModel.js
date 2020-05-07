@@ -4,7 +4,7 @@ const promisePool = require('../database/db').promise();
 
 const getAlluser_notes = async () => {
   try {
-    const [rows] = await promisePool.query('SELECT who_id,where_id,message  FROM user_notes ');
+    const [rows] = await promisePool.query('SELECT users.name,course_infos.name,user_notes.message FROM user_notes INNER JOIN users ON users.user_id = user_notes.who_id INNER JOIN course_infos ON course_infos.info_id = user_notes.where_to');
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -15,7 +15,7 @@ const getAlluser_notes = async () => {
 
 const getuser_note = async (id) => {
   try {
-    const [rows] = await promisePool.query('SELECT message FROM user_notes  WHERE  who_id = ? ' , [ id ]);
+    const [rows] = await promisePool.query('SELECT users.name,course_infos.name,user_notes.message FROM user_notes INNER JOIN users ON users.user_id = user_notes.who_id INNER JOIN course_infos ON course_infos.info_id = user_notes.where_to WHERE where_to = ? ' , [ id ]);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -26,7 +26,7 @@ const insertuser_note = async (user) => {
   try {
     console.log('insert user_note?', user);
     
-    const [rows] = await promisePool.query('INSERT INTO user_notes (who_id, where_id, message) VALUES (?, ?, ?)',user);
+    const [rows] = await promisePool.query('INSERT INTO user_notes (who_id, where_to, message) VALUES (?, ?, ?)',user);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -36,7 +36,7 @@ const insertuser_note = async (user) => {
 const updateuser_note = async (user) => {
   try {
     console.log('insert user_note?', user);
-    const [rows] = await promisePool.query('UPDATE user_notes SET  where_id = ?, message = ? WHERE user_notes.who_id = ?', [ user.who_id, user.where_id,user.message ]);
+    const [rows] = await promisePool.query('UPDATE user_notes SET  where_id = ?, message = ? WHERE user_notes.who_id = ?', [ user.who_id, user.where_to,user.message ]);
     
     return rows;
   } catch (e) {

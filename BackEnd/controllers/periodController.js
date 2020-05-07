@@ -12,7 +12,7 @@ const period_list_get = async (req, res) => {
 
 const period_get = async (req, res) => {
   console.log('period id parameter', req.params);
-  const period = await periodModel.getperiod(req.params.id);
+  const period = await periodModel.getPeriod(req.params.id);
   res.json(period);
 };
 
@@ -31,9 +31,9 @@ const period_post = async (req, res) => {
     ];
     const user = await periodModel.insertPeriod(params);
     console.log('inserted!!!', user);
-    res.send(`added user: ${user.period_id}`);
+    res.send(`added period`);
   } catch (e) {
-    console.error('problem with user_post in userController', e);
+    console.error('problem with period_post in userController', e);
     res.status(500).send(`database insert error: ${e.message}`);
   }
 };
@@ -49,7 +49,7 @@ const  period_put = async (req, res) => {
 const period_delete = async (req, res) => {
   console.log('period_delete', req.parms);
   const delPeriod = await periodModel.deletePeriod(req.params.id);
-  console.log('user_delete result from db', delUser);
+  console.log('user_delete result from db', delPeriod);
   res.json({ deleted: 'OK' });
 };
 

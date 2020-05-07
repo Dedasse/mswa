@@ -147,14 +147,10 @@ puitteissa kirjoittamiseen.');
 CREATE TABLE `user_notes` (
   `note_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `who_id` int(11) NOT NULL ,
-  `fcourse_id` int NOT NULL ,
-  `fteacher_id`int NOT NULL,
-  `finfo_id`int NOT NULL,
+  `where_to`int(11) NOT NULL,
   `message` text NOT NULL,
   FOREIGN KEY (`who_id`) REFERENCES users(user_id),
-  FOREIGN KEY (`fcourse_id`) REFERENCES courses(course_id),
-  FOREIGN KEY (`fteacher_id`) REFERENCES teachers(teacher_id),
-  FOREIGN KEY (`finfo_id`) REFERENCES course_info(info_id)
+  FOREIGN KEY (`where_to`) REFERENCES course_infos(`info_id`)
 );
 
 INSERT INTO `teachers` (`teacher_id`,`name`,`picture`) VALUES
@@ -174,4 +170,3 @@ INSERT INTO `teachers` (`teacher_id`,`name`,`picture`) VALUES
 (14, 'Toni Spännäri', 'toni_spannari.png'),
 (15, 'Ulla Paatola', 'ulla_paatola.png');
 
-[passport.authenticate('jwt', {session: false}),admin]

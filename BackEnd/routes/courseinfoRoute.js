@@ -16,8 +16,8 @@ router.get('/:id', courseinfoController.courseinfo_get);
 
 router.post('/', courseinfoController.courseinfo_post);
 
-router.put('/',[passport.authenticate('jwt', {session: false}),admin], courseinfoController.courseinfo_put);
+router.put('/',[passport.authenticate('jwt', {session: false}),admin], courseinfoController.courseinfo_put);// only for admin
 
-router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], courseinfoController.courseinfo_delete);
+router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], courseinfoController.courseinfo_delete);// only for admin
 
 module.exports = router;

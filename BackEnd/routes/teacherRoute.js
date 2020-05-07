@@ -39,8 +39,8 @@ router.post('/',
       //res.send('With this endpoint you can add cats');
     });
 
-router.put('/',[passport.authenticate('jwt', {session: false}),admin], teacherController.teacher_put);
+router.put('/',[passport.authenticate('jwt', {session: false}),admin], teacherController.teacher_put); //only for admin
 
-router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], teacherController.teacher_delete);
+router.delete('/:id',[passport.authenticate('jwt', {session: false}),admin], teacherController.teacher_delete);// only for admin
 
 module.exports =router;

@@ -28,7 +28,7 @@ const user_note_post = async (req, res) => {
   try {
     const params = [
       req.body.who_id,
-      req.body.where_id,
+      req.body.where_to,
       req.body.message
     ];
     const user = await usernoteModel.insertuser_note(params);

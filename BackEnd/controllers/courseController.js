@@ -18,7 +18,7 @@ const course_get = async (req, res) => {
 
 
 const course_post = async (req, res) => {
-  console.log('user_post', req.body);
+  console.log('course_post', req.body);
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
@@ -33,7 +33,7 @@ const course_post = async (req, res) => {
     ];
     const user = await courseModel.insertcourse(params);
     console.log('inserted!!!', user);
-    res.send(`added user: ${user.course_id}`);
+    res.send(`added course`);
   } catch (e) {
     console.error('problem with user_post in userController', e);
     res.status(500).send(`database insert error: ${e.message}`);
@@ -51,7 +51,7 @@ const  course_put = async (req, res) => {
 const course_delete = async (req, res) => {
   console.log('course_delete', req.parms);
   const delcourse = await courseModel.deletecourse(req.params.id);
-  console.log('user_delete result from db', delUser);
+  console.log('user_delete result from db', delcourse);
   res.json({ deleted: 'OK' });
 };
 
