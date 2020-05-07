@@ -54,27 +54,56 @@ body {
     display: none;
 }
 
+.light-border {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    font-family: Verdana;
+    color: white;
+}
+
 #actual_content {
     position: relative;
     width: 23.92%;
+
 }
 
-#login-form {
-    border: 3px solid gray;
-    padding: 16px;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+label {
+    color: white;
+    font-size: 18px;
 }
 
-#registration-form {
-    border: 2px solid gray;
+#login1 {
+    position: absolute;
+    top: 10.7%;
+    right: 11.9%;
+}
+
+#login2 {
+    margin-left: 12.4%;
+}
+
+#log {
+    border: 3px solid darkslateblue;
     padding: 16px;
     border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    width: 16%;
+    float: left;
+    margin-left:28%;
+    text-align: center;
+}
+
+#reg {
+    border: 3px solid darkslateblue;
+    padding: 16px;
+    border-radius: 10px;
+    width: 16%;
+    float: right;
+    margin-right: 28%;
+    text-align: center;
 }
 
 h1, h2, h3, h4 {
@@ -105,11 +134,6 @@ h4 {
 .container {
     max-width: 100%;
     padding: 1em;
-}
-
-button:hover{
-    background-color: purple;
-    color: white;
 }
 
 input[type=checkbox] {
@@ -156,8 +180,8 @@ img {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 9%;
-    background-color: gray;
+    width: 10%;
+    background-color: darkslateblue;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -175,6 +199,8 @@ img {
 
 #myBtn:hover, #myBtnCopy:hover {
     background-color: rebeccapurple;
+    padding: 15px;
+    font-size: 22px;
 }
 
 @-webkit-keyframes fadeIn {
@@ -197,7 +223,7 @@ img {
     top: 30px;
     right: 30px;
     width: 10%;
-    background-color: gray;
+    background-color: darkslateblue;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -211,14 +237,16 @@ img {
 
 .myBtn2:hover {
     background-color: rebeccapurple;
+    padding: 15px;
+    font-size: 22px;
 }
 
 .myBtn3 {
     position: fixed;
     top: 30px;
     right: 30px;
-    width: 8%;
-    background-color: gray;
+    width: 10%;
+    background-color: darkslateblue;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -227,17 +255,21 @@ img {
     border: none;
     outline: none;
     z-index: 99;
+
 }
 
 .myBtn3:hover {
     background-color: rebeccapurple;
+    padding: 15px;
+    font-size: 22px;
 }
 
 #myBtn4 {
-    background-color: gray;
+    background-color: darkslateblue;
     color: white;
     cursor: pointer;
     padding: 15px;
+    margin-top: 12px;
     border-radius: 10px;
     font-size: 18px;
     border: none;
@@ -246,13 +278,16 @@ img {
 
 #myBtn4:hover {
     background-color: rebeccapurple;
+    padding: 15px;
+    font-size: 22px;
 }
 
 #myBtn5 {
-    background-color: gray;
+    background-color: darkslateblue;
     color: white;
     cursor: pointer;
     padding: 15px;
+    margin-top: 12px;
     border-radius: 10px;
     font-size: 18px;
     border: none;
@@ -261,4 +296,95 @@ img {
 
 #myBtn5:hover {
     background-color: rebeccapurple;
+    padding: 15px;
+    font-size: 22px;
+}
+
+#myBtn6 {
+    position: fixed;
+    top: 30px;
+    right: 200px;
+    width: 10%;
+    background-color: darkslateblue;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    z-index: 99;
+
+}
+
+#myBtn6:hover {
+    background-color: rebeccapurple;
+    padding: 15px;
+    font-size: 22px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+
+}
+
+.modal-content {
+    background-color: rgba(0,0,0,0.6);
+    margin: 31px 1230px auto;
+    border: 3px solid darkslateblue;
+    width: 20.4%;
+    border-radius: 10px;
+}
+
+.modalBtn {
+    background-color: darkslateblue;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.modalBtn:hover {
+    background-color: rebeccapurple;
+    padding: 15px;
+    font-size: 22px;
+}
+
+.modalForm {
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Verdana;
+    width: 92%;
+    padding: 10px;
+    margin: 10px 10px 10px 0;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
 }

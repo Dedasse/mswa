@@ -20,30 +20,32 @@
                 width: 100%;
             }
 
-            #course1 {
-                width: 100%;
+            #periodFirst {
+                width: 418%;
             }
 
-            #course2 {
-                margin-top: 433px;
-                right: -5px;
+            #periodSecond {
+                margin-top: 512px;
+                left: 0;
+                right: 10%;
                 position: absolute;
-                width: 100%;
+                width: 418%;
             }
 
-            #course3 {
-                margin-top: 858px;
+            #periodThird {
+                margin-top: 964px;
+                left: 0;
                 right: -5px;
                 position: absolute;
-                width: 100%;
+                width: 418%;
             }
 
-            #course4 {
-                margin-top: 1282px;
-                right: -5px;
+            #periodFourth {
+                margin-top: 1412px;
+                left: 0;
+                right: 100%;
                 position: absolute;
-                width: 100%;
-                min-width: 100%;
+                width: 418%;
             }
 
             img {
@@ -52,7 +54,19 @@
             }
 
             h1 {
-                margin-right: 85px;
+                margin-right: 110px;
+            }
+
+            #myBtn, #myBtnCopy {
+                width: 18%;
+            }
+
+            .myBtn2 {
+                width: 18%;
+            }
+
+            .myBtn3 {
+                width: 18%;
             }
         }
 
@@ -78,10 +92,14 @@
                 top
             </button>
 
-            <button class="myBtn2" onclick="setActiveStyleSheet('default'); return false;">Dark mode</button>
-            <button class="myBtn3" onclick="setActiveStyleSheet('alternate'); return false;">Light mode</button>
+            <button class="myBtn2" onclick="setActiveStyleSheet('default'); return false;"
+                    title="Enable dark mode if you're cool">Dark mode
+            </button>
+            <button class="myBtn3" onclick="setActiveStyleSheet('alternate'); return false;"
+                    title="Enable light mode to blind yourself">Light mode
+            </button>
 
-            <div class="left">
+            <div id="log">
                 <form id="login-form" class="light-border">
                     <div>
                         <label>Email:</label>
@@ -97,12 +115,8 @@
                 </form>
             </div>
 
-            <div class="right">
+            <div id="reg">
                 <form id="registration-form" class="light-border">
-                    <div>
-                        <label>Username:</label>
-                        <input class="light-border" type="text" name="username"/>
-                    </div>
                     <div>
                         <label>Email:</label>
                         <input class="light-border" type="text" name="username"/>
@@ -154,7 +168,42 @@
     </main>
 </div>
 
+<button id="myBtn6" onclick="document.getElementById('id01').style.display='block'">Log in</button>
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+    <form class="modal-content animate" action="/action_page.php">
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input class="modalForm" type="text" placeholder="Enter username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input class="modalForm" type="password" placeholder="Enter password" name="psw" required>
+
+            <button class="modalBtn" type="submit">Log in</button>
+
+            <button class="modalBtn" type="button" onclick="document.getElementById('id01').style.display=
+                    'none'">Cancel
+            </button>
+        </div>
+    </form>
+</div>
+
 <script>
+
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
     const seppo1 = document.getElementById('content1');
     const seppo2 = document.getElementById('content2');
