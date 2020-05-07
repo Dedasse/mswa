@@ -33,7 +33,7 @@ const courseinfo_post = async (req, res) => {
     ];
     const user = await courseinfoModel.insertcourseinfo(params);
     console.log('inserted!!!', user);
-    res.send(`added user: ${user.info_id}`);
+    res.send(`added info`);
   } catch (e) {
     console.error('problem with user_post in userController', e);
     res.status(500).send(`database insert error: ${e.message}`);

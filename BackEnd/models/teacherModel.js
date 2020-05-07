@@ -36,7 +36,7 @@ const insertteacher = async (user) => {
 const updateteacher = async (user) => {
   try {
     console.log('insert teacher?', user);
-    const [rows] = await promisePool.query('UPDATE teachers SET name = ?, picture = ? WHERE teachers.teacher_id = ?', [ user.name, user.filename, user.teacher_id ]);
+    const [rows] = await promisePool.query('UPDATE teachers SET name = ? WHERE teachers.teacher_id = ?', [ user.name, user.filename, user.teacher_id ]);
     
     return rows;
   } catch (e) {

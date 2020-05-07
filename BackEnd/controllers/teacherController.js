@@ -60,7 +60,7 @@ const  teacher_put = async (req, res) => {
 const teacher_delete = async (req, res) => {
   console.log('teacher_delete', req.parms);
   const delteacher = await teacherModel.deleteteacher(req.params.id);
-  console.log('user_delete result from db', delUser);
+  console.log('user_delete result from db', delteacher);
   res.json({ deleted: 'OK' });
 };
 

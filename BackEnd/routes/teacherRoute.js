@@ -28,7 +28,7 @@ router.get('/', teacherController.teacher_list_get);
 router.get('/:id', teacherController.teacher_get);
 
 //router.post('/', teacherController.teacher_post);
-router.post('/',
+router.post('/',[passport.authenticate('jwt', {session: false}),admin],
     upload.single('picture'),
     [
       body('name', 'cannot be empty').isLength({min: 1}),
@@ -36,7 +36,7 @@ router.post('/',
     ], (req, res) => {
       console.log('picture: ', req.file);
       teacherController.teacher_post(req, res);
-      //res.send('With this endpoint you can add cats');
+      //add teacher
     });
 
 router.put('/',[passport.authenticate('jwt', {session: false}),admin], teacherController.teacher_put); //only for admin
